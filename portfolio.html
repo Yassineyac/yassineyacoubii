@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yassine Yacoubi — Enseignant, formateur de formateurs et coordinateur</title>
+<meta name="description" content="J'accompagne apprenants, enseignants et personnels d'encadrement vers une autre façon d'apprendre, d'enseigner, de diriger.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafafa;--fg:#1a1c2a;--surface:#f5f6fa;
+  --primary:#2d3561;--primary-soft:#4a5aad;
+  --muted:#6b7280;--border:#e5e7ef;--card:#fff;
+  --radius:.5rem;--shadow-soft:0 1px 2px rgba(26,28,42,.04),0 8px 24px rgba(26,28,42,.06);
+  --shadow-card:0 1px 3px rgba(26,28,42,.05),0 20px 50px -20px rgba(26,28,42,.15);
+  --shadow-elegant:0 10px 40px -10px rgba(45,53,97,.25);
+  --transition:all .4s cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--fg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Fraunces',Georgia,serif;letter-spacing:-.02em;font-weight:500}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:'Inter',sans-serif}
+
+/* PAGES */
+[data-page]{display:none}
+[data-page].active{display:block}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,250,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:60px;display:flex;align-items:center;gap:32px}
+.nav-logo{font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:var(--fg);cursor:pointer}
+.nav-links{display:flex;gap:4px;margin-left:auto;align-items:center}
+.nav-link{padding:6px 14px;border-radius:6px;font-size:13px;color:var(--muted);background:transparent;border:none;transition:var(--transition)}
+.nav-link:hover{background:var(--surface);color:var(--fg)}
+.nav-link.active{color:var(--fg);font-weight:500}
+.nav-cta{background:var(--primary)!important;color:#fff!important;border-radius:6px;padding:8px 18px;font-size:13px;font-weight:500;border:none}
+.nav-cta:hover{opacity:.9}
+
+/* LAYOUT */
+.container{width:100%;max-width:1200px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:96px 0 112px}
+.hero-bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,var(--bg) 0%,var(--surface) 100%)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-soft);font-weight:500;margin-bottom:24px}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;color:var(--fg);max-width:720px;margin-bottom:24px}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--primary-soft) 0%,var(--primary) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:17px;color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:40px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:80px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;border-radius:6px;padding:12px 24px;font-size:14px;font-weight:500;border:none;box-shadow:var(--shadow-elegant);transition:var(--transition)}
+.btn-primary:hover{opacity:.9}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.6);color:var(--fg);border-radius:6px;padding:12px 24px;font-size:14px;font-weight:500;border:1px solid var(--border);transition:var(--transition)}
+.btn-outline:hover{background:var(--surface)}
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;border-top:1px solid var(--border);padding-top:40px;max-width:600px}
+.stat-n{font-family:'Fraunces',serif;font-size:26px;font-weight:500;color:var(--fg);margin-bottom:4px}
+.stat-l{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+
+/* SECTION ABOUT */
+.about-section{padding:96px 0}
+.about-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center}
+.about-img{position:relative}
+.about-img::before{content:'';position:absolute;inset:-12px;border-radius:16px;background:rgba(45,53,97,.05);z-index:-1}
+.about-img img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/5;box-shadow:var(--shadow-card)}
+.eyebrow{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--primary-soft);font-weight:500;margin-bottom:16px}
+.about-text h2{font-size:clamp(1.8rem,3.5vw,2.8rem);color:var(--fg);margin-bottom:24px;line-height:1.2}
+.about-text p{color:var(--muted);line-height:1.8;margin-bottom:16px;font-size:15px}
+.about-text p strong{color:var(--fg)}
+.link-arrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--primary-soft);margin-top:24px;transition:var(--transition)}
+.link-arrow:hover{gap:12px}
+.link-arrow::after{content:'→'}
+
+/* EXPERTISE */
+.expertise-section{background:var(--surface);padding:96px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.expertise-header{max-width:560px;margin-bottom:64px}
+.expertise-header h2{font-size:clamp(2rem,4vw,3rem);color:var(--fg);margin-top:8px}
+.expertise-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.expertise-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;box-shadow:var(--shadow-soft);transition:var(--transition)}
+.expertise-card:hover{box-shadow:var(--shadow-card);transform:translateY(-2px);border-color:rgba(74,90,173,.3)}
+.expertise-icon{width:40px;height:40px;border-radius:8px;background:rgba(45,53,97,.08);display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:18px}
+.expertise-card h3{font-family:'Fraunces',serif;font-size:15px;color:var(--fg);margin-bottom:8px;font-weight:500}
+.expertise-card p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* QUOTE */
+.quote-section{background:var(--primary);padding:96px 0;text-align:center}
+.quote-icon{font-size:40px;opacity:.6;margin-bottom:32px;color:#fff}
+.quote-text{font-family:'Fraunces',serif;font-size:clamp(1.2rem,2.5vw,1.6rem);color:#fff;line-height:1.7;max-width:640px;margin:0 auto;font-weight:300}
+.quote-author{font-size:12px;color:rgba(255,255,255,.7);margin-top:32px;text-transform:uppercase;letter-spacing:.15em}
+
+/* CTA SECTION */
+.cta-section{padding:96px 0;text-align:center}
+.cta-section h2{font-size:clamp(2rem,4vw,3rem);color:var(--fg);max-width:640px;margin:0 auto 24px;line-height:1.2}
+.cta-section p{color:var(--muted);max-width:480px;margin:0 auto 40px;font-size:15px}
+
+/* TIMELINE */
+.timeline{margin-top:48px}
+.timeline-item{display:grid;grid-template-columns:200px 1fr;gap:32px;border-top:1px solid var(--border);padding-top:32px;margin-bottom:32px}
+.timeline-period{font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--primary-soft);font-weight:500;padding-top:4px}
+.timeline-item h3{font-family:'Fraunces',serif;font-size:22px;color:var(--fg);margin-bottom:8px;font-weight:500}
+.timeline-item p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* PORTFOLIO TABS */
+.tabs{display:inline-flex;gap:4px;padding:4px;border-radius:50px;border:1px solid var(--border);background:var(--card);margin-bottom:48px}
+.tab-btn{padding:8px 20px;border-radius:50px;border:none;font-size:13px;background:transparent;color:var(--muted);transition:var(--transition)}
+.tab-btn.active{background:var(--primary);color:#fff}
+.tab-btn:hover:not(.active){color:var(--fg)}
+.portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.portfolio-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:32px;display:flex;flex-direction:column;box-shadow:var(--shadow-soft);transition:var(--transition)}
+.portfolio-card:hover{box-shadow:var(--shadow-card);transform:translateY(-2px);border-color:rgba(74,90,173,.3)}
+.portfolio-tag{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--primary-soft);font-weight:500}
+.portfolio-num{font-size:12px;color:var(--muted);font-family:'Fraunces',serif}
+.portfolio-card h2{font-family:'Fraunces',serif;font-size:20px;color:var(--fg);margin:24px 0 12px;font-weight:500}
+.portfolio-card p{font-size:13px;color:var(--muted);line-height:1.6;flex:1}
+.empty-state{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:64px 32px;text-align:center}
+.empty-state h2{font-family:'Fraunces',serif;font-size:24px;color:var(--fg);margin-bottom:12px;font-weight:500}
+.empty-state p{font-size:14px;color:var(--muted);max-width:400px;margin:0 auto;line-height:1.6}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.contact-form{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:40px;box-shadow:var(--shadow-soft)}
+.field-group{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.15em;color:var(--muted);margin-bottom:8px}
+.field input,.field textarea{width:100%;border:1px solid var(--border);border-radius:6px;background:var(--bg);padding:12px 16px;font-size:14px;font-family:'Inter',sans-serif;color:var(--fg);outline:none;transition:var(--transition)}
+.field input:focus,.field textarea:focus{border-color:var(--primary-soft);box-shadow:0 0 0 3px rgba(74,90,173,.1)}
+.field textarea{resize:vertical;min-height:140px}
+.contact-aside{display:flex;flex-direction:column;gap:12px}
+.contact-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 24px;display:flex;align-items:center;gap:16px;box-shadow:var(--shadow-soft);transition:var(--transition)}
+.contact-card:hover{box-shadow:var(--shadow-card);transform:translateY(-1px)}
+.contact-card-icon{width:40px;height:40px;border-radius:8px;background:rgba(45,53,97,.08);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.contact-card-label{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin-bottom:3px}
+.contact-card-value{font-size:13px;color:var(--fg)}
+.contact-info-box{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:24px;margin-top:12px}
+.contact-info-box h3{font-family:'Fraunces',serif;font-size:18px;color:var(--fg);margin-bottom:12px;font-weight:500}
+.contact-info-box p{font-size:13px;color:var(--muted);line-height:1.7}
+.sent-state{text-align:center;padding:64px 0}
+.sent-state h2{font-family:'Fraunces',serif;font-size:28px;color:var(--fg);margin-bottom:12px}
+
+/* FOOTER */
+.footer{background:var(--surface);border-top:1px solid var(--border);padding:32px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-logo{font-family:'Fraunces',serif;font-size:15px;font-weight:500;color:var(--fg)}
+.footer-center{font-size:12px;color:var(--muted);text-align:center}
+.footer-right{font-size:12px;color:var(--muted);display:flex;gap:24px}
+
+/* PAGE HEADER */
+.page-header{padding:80px 0 48px}
+.page-header .eyebrow{display:block;margin-bottom:16px}
+.page-header h1{font-size:clamp(2.2rem,5vw,3.8rem);color:var(--fg);max-width:720px;line-height:1.1;margin-bottom:24px}
+.page-header p{font-size:15px;color:var(--muted);max-width:560px;line-height:1.7}
+
+/* SUCCESS/ERROR */
+.alert{padding:12px 16px;border-radius:6px;font-size:13px;margin-bottom:16px}
+.alert-error{background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
+
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .expertise-grid{grid-template-columns:repeat(2,1fr)}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(3,1fr)}
+  .timeline-item{grid-template-columns:1fr}
+  .timeline-period{padding-top:0}
+}
+@media(max-width:600px){
+  .nav-links .nav-link:not(.nav-cta){display:none}
+  .expertise-grid,.portfolio-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr;gap:20px}
+  .field-group{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo" onclick="goPage('home')">Yassine Yacoubi</div>
+  <div class="nav-links">
+    <button class="nav-link" id="nav-home" onclick="goPage('home')">Accueil</button>
+    <button class="nav-link" id="nav-about" onclick="goPage('about')">À propos</button>
+    <button class="nav-link" id="nav-portfolio" onclick="goPage('portfolio')">Réalisations</button>
+    <button class="nav-link nav-cta" onclick="goPage('contact')">Me contacter</button>
+  </div>
+</nav>
+
+<!-- ===== PAGE ACCUEIL ===== -->
+<div data-page="home" class="active">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-eyebrow">Parcours, Formation, Réalisations et Projets</div>
+      <h1>YASSINE YACOUBI<br><span class="gradient">Enseignant, formateur de formateurs</span> et coordinateur.</h1>
+      <p class="hero-desc">J'accompagne apprenants, enseignants et personnels d'encadrement vers une autre façon d'apprendre, d'enseigner, de diriger où chaque dispositif a du sens, chaque parcours laisse une trace, et chaque compétence se construit pour durer.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="goPage('contact')">Me contacter →</button>
+        <button class="btn-outline" onclick="goPage('portfolio')">Voir mes réalisations</button>
+      </div>
+      <div class="hero-stats">
+        <div><div class="stat-n">+120</div><div class="stat-l">Enseignants accompagnés au quotidien</div></div>
+        <div><div class="stat-n">+10</div><div class="stat-l">Stagiaires encadrés et formés</div></div>
+        <div><div class="stat-n">+300</div><div class="stat-l">Apprenants suivis tout au long de leur parcours</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=480&q=80" alt="Yassine Yacoubi">
+        </div>
+        <div class="about-text">
+          <div class="eyebrow">À propos</div>
+          <h2>Enseignant, créateur de contenu pédagogique et formateur de formateurs</h2>
+          <p>Depuis plusieurs années, j'interviens au croisement de l'enseignement, de l'ingénierie pédagogique et de la formation. Mon travail couvre le <strong>FLE, le FOS, le FOU</strong>, le développement professionnel et la conception de ressources d'apprentissage.</p>
+          <button class="link-arrow" onclick="goPage('about')">Lire la biographie complète</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-section">
+    <div class="container">
+      <div class="expertise-header">
+        <div class="eyebrow">Domaines d'expertise</div>
+        <h2>Là où je crée le plus d'impact.</h2>
+      </div>
+      <div class="expertise-grid">
+        <div class="expertise-card"><div class="expertise-icon">🎓</div><h3>Enseignement</h3><p>Cours collectifs et individuels, en présentiel et en ligne, parcours adaptés à plusieurs types de besoin : français général, pratique de l'oral, français de spécialité.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">👥</div><h3>Formation des enseignants</h3><p>Ateliers de formations qui renforcent la confiance pédagogique et les pratiques de classe.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">🛡️</div><h3>Conception de formations</h3><p>Conception de formations clé en main : formation initiale et continue pour accompagner les enseignants à prendre en charge des classes.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">📖</div><h3>Référentiels & syllabus</h3><p>Référentiels et syllabus adaptés aux différents types de cours, de formations ou d'ateliers selon le besoin.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">🎓</div><h3>Programmes FLE / FOS / FOU</h3><p>Programmes spécialisés de français général, professionnel et universitaire, alignés sur le CECRL.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">✅</div><h3>Évaluation & certification</h3><p>Cours de préparation DELF DALF, TCF, TEF pour apprenants · Formation des examinateurs correcteurs.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">💼</div><h3>Gestion de projets</h3><p>De la mise en place à l'exécution — accompagnement complet des projets pédagogiques.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">⚡</div><h3>Ingénierie pédagogique</h3><p>Ressources clé en main adaptées aux différents publics, démarche qualité et amélioration continue.</p></div>
+        <div class="expertise-card"><div class="expertise-icon">✨</div><h3>Démarche qualité</h3><p>Amélioration continue selon le référentiel adopté — suivi, évaluation et ajustement des dispositifs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <div class="container">
+      <div class="quote-icon">❝</div>
+      <p class="quote-text">« Une combinaison rare de rigueur pédagogique, de clarté stratégique et d'attention sincère aux apprenants. »</p>
+      <div class="quote-author">Témoignages</div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Un défi en classe, une pratique à faire évoluer, une équipe à fédérer ?<br>Discutons-en ensemble.</h2>
+      <button class="btn-primary" onclick="goPage('contact')">Discutons ensemble →</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">Yassine Yacoubi</div>
+    <div class="footer-center">© 2025 · Enseignant, formateur de formateurs et coordinateur</div>
+    <div class="footer-right"><span>Rabat, Maroc</span><span>yassine.yacoubi.pro@gmail.com</span></div>
+  </footer>
+</div>
+
+<!-- ===== PAGE À PROPOS ===== -->
+<div data-page="about">
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">À propos</span>
+      <h1>Au croisement de l'enseignement, la formation et l'innovation.</h1>
+    </div>
+  </section>
+
+  <section style="padding-bottom:96px">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=480&q=80" alt="Yassine Yacoubi">
+        </div>
+        <div class="about-text">
+          <p style="font-size:17px;color:var(--fg);margin-bottom:20px">Je suis actuellement coordinateur pédagogique, formateur de formateurs, créateur de contenu pédagogique et concepteur de dispositif de formation.</p>
+          <p>Mon travail rassemble plus de 13 ans d'expérience en tant qu'enseignant, formateur et concepteur. J'accompagne les apprenants dans l'apprentissage du FLE, et les enseignants dans l'enseignement.</p>
+          <p>Je suis spécialisé en <strong>Français Langue Étrangère (FLE)</strong>, <strong>Français sur Objectifs Spécifiques (FOS)</strong> et <strong>Français sur Objectif Universitaire (FOU)</strong>, avec une expertise approfondie en conception de programmes alignés sur le CECRL, cadres de certifications et écosystèmes d'apprentissage hybrides et numériques.</p>
+          <p>En tant que coordinateur pédagogique, j'ai dirigé des équipes pluridisciplinaires, conçu des dispositifs de formation pour des enseignants et piloté des projets complexes, de la faisabilité à l'évaluation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="expertise-section">
+    <div class="container">
+      <div class="eyebrow">Parcours</div>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);color:var(--fg);margin-top:8px;margin-bottom:0">Un chemin pédagogique.</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-period">Aujourd'hui</div>
+          <div>
+            <h3>Coordinateur pédagogique et formateur de formateurs</h3>
+            <p>Coordination pédagogique, formations, accompagnement des apprenants et des enseignants.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Années récentes</div>
+          <div>
+            <h3>Créateur de contenu pédagogique</h3>
+            <p>Conception de programmes FLE, FOS et FOU et pilotage de dispositifs de formation.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-period">Fondations</div>
+          <div>
+            <h3>Enseignant, examinateur et formateur d'examinateurs</h3>
+            <p>Enseignant de français langue étrangère/sur objectifs spécifiques, examinateur-correcteur et jury pour les certifications officielles (DELF, DALF, TCF, TEF), et formateur d'examinateurs : j'interviens sur toute la chaîne, de la transmission en classe à l'évaluation des acquis, jusqu'à l'habilitation de celles et ceux qui évaluent à leur tour.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Envie de discuter ?</h2>
+      <button class="btn-primary" onclick="goPage('contact')">Me contacter →</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">Yassine Yacoubi</div>
+    <div class="footer-center">© 2025 · Enseignant, formateur de formateurs et coordinateur</div>
+    <div class="footer-right"><span>Rabat, Maroc</span></div>
+  </footer>
+</div>
+
+<!-- ===== PAGE RÉALISATIONS ===== -->
+<div data-page="portfolio">
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Réalisations</span>
+      <h1><span class="gradient">Un aperçu</span> de mon travail.</h1>
+      <p>Plutôt qu'une liste de projets précis, voici les grands domaines dans lesquels j'interviens au quotidien.</p>
+      <div class="tabs" style="margin-top:40px">
+        <button class="tab-btn active" id="tab-apercu" onclick="switchTab('apercu')">Un aperçu de mon travail</button>
+        <button class="tab-btn" id="tab-projets" onclick="switchTab('projets')">Mes projets précis</button>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-bottom:96px">
+    <div class="container">
+      <div id="content-apercu">
+        <div class="portfolio-grid">
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Enseignement</span><span class="portfolio-num">01</span></div><h2>Enseignement du français</h2><p>Plusieurs années d'enseignement du français langue étrangère, sur objectifs spécifiques et universitaires, auprès de publics variés.</p></article>
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Formation</span><span class="portfolio-num">02</span></div><h2>Accompagnement d'enseignants</h2><p>Accompagnement d'enseignants vacataires et de stagiaires : observation, retours pédagogiques, partage d'outils et de pratiques de classe.</p></article>
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Ingénierie</span><span class="portfolio-num">03</span></div><h2>Conception pédagogique</h2><p>Conception de séquences, de syllabus et de ressources d'apprentissage alignés sur des objectifs clairs et progressifs.</p></article>
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Évaluation</span><span class="portfolio-num">04</span></div><h2>Conception d'évaluations</h2><p>Réalisation de grilles, de tests et d'outils d'évaluation au service du suivi et de la progression des apprenants.</p></article>
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Ressources</span><span class="portfolio-num">05</span></div><h2>Création de ressources</h2><p>Élaboration de supports pédagogiques imprimés et numériques, pensés pour être simples à utiliser en classe.</p></article>
+          <article class="portfolio-card"><div style="display:flex;justify-content:space-between;align-items:center"><span class="portfolio-tag">Coordination</span><span class="portfolio-num">06</span></div><h2>Coordination pédagogique</h2><p>Coordination d'équipes pédagogiques, animation de réunions et mise en place de routines de travail collaboratives.</p></article>
+        </div>
+      </div>
+      <div id="content-projets" style="display:none">
+        <div class="empty-state">
+          <h2>Section en construction</h2>
+          <p>Mes projets précis seront ajoutés ici petit à petit. Revenez bientôt pour découvrir des réalisations concrètes et détaillées.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">Yassine Yacoubi</div>
+    <div class="footer-center">© 2025 · Enseignant, formateur de formateurs et coordinateur</div>
+    <div class="footer-right"><span>Rabat, Maroc</span></div>
+  </footer>
+</div>
+
+<!-- ===== PAGE CONTACT ===== -->
+<div data-page="contact">
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Un défi en classe, une pratique à faire évoluer, une équipe à fédérer ?<br>Discutons-en ensemble.</h1>
+      <p>Parlez-moi de votre contexte.</p>
+    </div>
+  </section>
+
+  <section style="padding-bottom:96px">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-form">
+          <div id="form-success" style="display:none" class="sent-state">
+            <h2>Merci.</h2>
+            <p style="color:var(--muted)">Votre message a bien été reçu. Je reviens vers vous très vite.</p>
+          </div>
+          <form id="contact-form" onsubmit="submitForm(event)">
+            <div id="form-error" class="alert alert-error" style="display:none"></div>
+            <div class="field-group">
+              <div class="field"><label>Nom</label><input name="name" required></div>
+              <div class="field"><label>Email</label><input name="email" type="email" required></div>
+            </div>
+            <div class="field"><label>Organisation</label><input name="org"></div>
+            <div class="field"><label>Sujet</label><input name="subject"></div>
+            <div class="field"><label>Message</label><textarea name="message" rows="6" required></textarea></div>
+            <button type="submit" class="btn-primary" id="submit-btn">Envoyer le message →</button>
+          </form>
+        </div>
+        <aside class="contact-aside">
+          <a href="mailto:yassine.yacoubi.pro@gmail.com" class="contact-card">
+            <div class="contact-card-icon">✉️</div>
+            <div><div class="contact-card-label">Email</div><div class="contact-card-value">yassine.yacoubi.pro@gmail.com</div></div>
+          </a>
+          <a href="https://www.linkedin.com/in/yassine-yacoubi-432247b2/" target="_blank" class="contact-card">
+            <div class="contact-card-icon">💼</div>
+            <div><div class="contact-card-label">LinkedIn</div><div class="contact-card-value">Connectons-nous</div></div>
+          </a>
+          <a href="https://wa.me/212619961620" target="_blank" class="contact-card">
+            <div class="contact-card-icon">💬</div>
+            <div><div class="contact-card-label">WhatsApp</div><div class="contact-card-value">+212 6 19 96 16 20</div></div>
+          </a>
+          <div class="contact-info-box">
+            <h3>Travailler ensemble</h3>
+            <p>J'accompagne des institutions partout dans le monde, en français et en anglais, sur des missions allant de courts ateliers à des projets de transformation pluriannuels.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo">Yassine Yacoubi</div>
+    <div class="footer-center">© 2025 · Enseignant, formateur de formateurs et coordinateur</div>
+    <div class="footer-right"><span>Rabat, Maroc</span><span>yassine.yacoubi.pro@gmail.com</span></div>
+  </footer>
+</div>
+
+<script>
+// ===== NAVIGATION =====
+function goPage(page) {
+  document.querySelectorAll('[data-page]').forEach(function(p) { p.classList.remove('active'); });
+  var el = document.querySelector('[data-page="' + page + '"]');
+  if (el) { el.classList.add('active'); window.scrollTo(0, 0); }
+  document.querySelectorAll('.nav-link:not(.nav-cta)').forEach(function(l) { l.classList.remove('active'); });
+  var navEl = document.getElementById('nav-' + page);
+  if (navEl) navEl.classList.add('active');
+}
+
+// ===== TABS RÉALISATIONS =====
+function switchTab(tab) {
+  document.getElementById('tab-apercu').classList.toggle('active', tab === 'apercu');
+  document.getElementById('tab-projets').classList.toggle('active', tab === 'projets');
+  document.getElementById('content-apercu').style.display = tab === 'apercu' ? 'block' : 'none';
+  document.getElementById('content-projets').style.display = tab === 'projets' ? 'block' : 'none';
+}
+
+// ===== FORMULAIRE CONTACT =====
+function submitForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('submit-btn');
+  var errEl = document.getElementById('form-error');
+  btn.textContent = 'Envoi en cours…';
+  btn.disabled = true;
+  errEl.style.display = 'none';
+  var form = e.target;
+  var data = {
+    name: form.name.value,
+    email: form.email.value,
+    org: form.org.value,
+    subject: form.subject.value,
+    message: form.message.value
+  };
+  // Simulation d'envoi — remplacer par votre endpoint API si besoin
+  setTimeout(function() {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }, 1000);
+}
+
+// Init
+document.getElementById('nav-home').classList.add('active');
+</script>
+</body>
+</html>
